@@ -16,8 +16,6 @@ import java.util.ArrayList;
 
 //THIS IS USED TO TEST IF DETECTION WORKS AND WHAT THE NUMBERS ARE FOR THE APRIL TAG, NOT FOR ANY MOVEMENT TESTING
 @Autonomous
-
-@Disabled
 public class AprilTagDetectionExample extends LinearOpMode
 {
     OpenCvCamera camera;
@@ -27,12 +25,12 @@ public class AprilTagDetectionExample extends LinearOpMode
 
     // Lens intrinsics
     // UNITS ARE PIXELS
-    // NOTE: this calibration is for the C920 webcam at 800x448.
+    // NOTE: this calibration is for the C920 webcam at 1920 x 1080.
     // You will need to do your own calibration for other configurations!
-    double fx = 578.272;
-    double fy = 578.272;
-    double cx = 402.145;
-    double cy = 221.506;
+    double fx = 1385.92;
+    double fy = 1385.92;
+    double cx = 951.982;
+    double cy = 534.084;
 
     // UNITS ARE METERS
     double tagsize = 0.166;
@@ -57,7 +55,7 @@ public class AprilTagDetectionExample extends LinearOpMode
             @Override
             public void onOpened()
             {
-                camera.startStreaming(800,448, OpenCvCameraRotation.UPRIGHT);
+                camera.startStreaming(1920,1080, OpenCvCameraRotation.UPRIGHT);
             }
 
             @Override
@@ -172,7 +170,7 @@ public class AprilTagDetectionExample extends LinearOpMode
         telemetry.addLine(String.format("Translation X: %.2f feet", detection.pose.x*FEET_PER_METER));
         telemetry.addLine(String.format("Translation Y: %.2f feet", detection.pose.y*FEET_PER_METER));
         telemetry.addLine(String.format("Translation Z: %.2f feet", detection.pose.z*FEET_PER_METER));
-//        telemetry.addLine(String.format("Rotation Yaw: %.2f degrees", Math.toDegrees(detection.pose.yaw)));
+//        telemetry.addLine(String.format("Rotation Yaw: %.2f degrees", Math.toDegrees(detection.pose.y)));
 //        telemetry.addLine(String.format("Rotation Pitch: %.2f degrees", Math.toDegrees(detection.pose.pitch)));
 //        telemetry.addLine(String.format("Rotation Roll: %.2f degrees", Math.toDegrees(detection.pose.roll)));
     }
