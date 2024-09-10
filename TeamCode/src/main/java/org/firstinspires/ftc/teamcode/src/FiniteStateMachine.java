@@ -12,9 +12,9 @@ public class FiniteStateMachine {
         HIGH,
     };
 
-    State autostate = State.INTAKE;
+    static State autostate = State.INTAKE;
 
-    public void runstatemachine(){
+    public static void runstatemachine(){
 
         switch(autostate){
             case INTAKE:
