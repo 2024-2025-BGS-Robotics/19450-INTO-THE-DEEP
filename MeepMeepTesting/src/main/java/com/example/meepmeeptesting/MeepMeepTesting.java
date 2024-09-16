@@ -22,8 +22,6 @@ public class MeepMeepTesting {
         MeepMeep meepMeep = new MeepMeep(900);
 
             System.out.println("Init");
-
-
         // Set bot constraints: maxVel, maxAccel, maxAngVel, maxAngAccel, track width
         // Set bot colour: Blue Dark, Blue Light, Red Dark, Red Light
         RoadRunnerBotEntity rightSideBlueBot = new DefaultBotBuilder(meepMeep)
