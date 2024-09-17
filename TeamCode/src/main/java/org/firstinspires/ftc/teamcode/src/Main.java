@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.lib.MotorController;
+import org.firstinspires.ftc.teamcode.lib.SliderController;
 
 
 @TeleOp (name="LDB Main", group="LinearOpmode")
@@ -25,6 +26,8 @@ public class Main extends LinearOpMode {
                 hardwareMap.get(DcMotor.class,"RightFrontDrive")
         );
 
+        RoadRunnerHandler roadrunnerhandeler = new RoadRunnerHandler();
+
         // Wait for the game to start (driver presses START)
         waitForStart();
         runtime.reset();
@@ -32,11 +35,12 @@ public class Main extends LinearOpMode {
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
             MotorController.runmotor(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.right_bumper);
-
+            roadrunnerhandeler.drive.followTrajectorySequence(RoadRunnerHandler.BlueLeftSideRunner);
 
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
+            telemetry.addLine("SliderPID Error:" + SliderController.PIDError);
 
             telemetry.update();
         }
