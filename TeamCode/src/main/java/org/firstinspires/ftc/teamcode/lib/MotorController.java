@@ -22,9 +22,9 @@ public class MotorController {
         RightBackMotor = rightBackDrive;
         RightFrontMotor = rightFrontDrive;
 
-        LeftBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        LeftBackMotor.setDirection(DcMotor.Direction.REVERSE);
         LeftFrontMotor.setDirection(DcMotor.Direction.FORWARD);
-        RightBackMotor.setDirection(DcMotor.Direction.FORWARD);
+        RightBackMotor.setDirection(DcMotor.Direction.REVERSE);
         RightFrontMotor.setDirection(DcMotor.Direction.FORWARD);
 
         LeftBackMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

@@ -1,8 +1,9 @@
 package org.firstinspires.ftc.teamcode.src;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
-@TeleOp (name="Finite State Machine", group="Opmode")
+@Disabled
+@TeleOp (name="Finite State Machine", group="LinearOpmode")
 public class FiniteStateMachine {
     private enum State{
         INTAKE,

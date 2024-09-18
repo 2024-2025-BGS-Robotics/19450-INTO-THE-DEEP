@@ -34,9 +34,8 @@ public class DriveConstants {
      */
     public static final boolean RUN_USING_ENCODER = false;
     //VELOCITY PIDS
-    //If the F Value is indeed 11.7025, the P value is 1.17025 and the I Value is 0.117025, the D Value is 0
     public static PIDFCoefficients MOTOR_VELO_PID = new PIDFCoefficients(0, 0, 0,
-            getMotorVelocityF(MAX_RPM / 60 * TICKS_PER_REV)); //should be about 11.7025 from Shubh's Calculations
+            getMotorVelocityF(MAX_RPM / 60 * TICKS_PER_REV));
 
 
 

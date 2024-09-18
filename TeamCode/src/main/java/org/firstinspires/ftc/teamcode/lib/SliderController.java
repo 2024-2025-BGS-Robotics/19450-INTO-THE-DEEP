@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 public class SliderController {
     private static DcMotor slidermotor;
-    public static PIDController sliderPID = new PIDController(0, 0, 0);
+    public static PIDController sliderPID = new PIDController(0, 0, 0); // Tune this for cm values
 
 //THESE VALUES ARE IN CM
     public static final double highbasket = 109.2;
@@ -25,10 +25,10 @@ public class SliderController {
         slidermotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-    public void runslider(boolean runbuttonup, boolean runbuttondown) {
-        if (runbuttonup) {
+    public static void runslider(float runbuttonup, float runbuttondown) {
+        if (runbuttonup <= 0.5) {
             slidermotor.setPower(0.3);
-        } else if (runbuttondown) {
+        } else if (runbuttondown <= 0.5) {
             slidermotor.setPower(-0.3);
         } else {
             slidermotor.setPower(0);
@@ -43,10 +43,10 @@ public class SliderController {
     PIDError = sliderPID.getPositionError();
         }
 
-    public void settarget(double pos){
+    public static void settarget(double pos){
         sliderPID.setSetPoint(pos);
     }
-    public void settarget(double pos, boolean toggle){
+    public static void settarget(double pos, boolean toggle){
         if(toggle){
             sliderPID.setSetPoint(pos);
         }
