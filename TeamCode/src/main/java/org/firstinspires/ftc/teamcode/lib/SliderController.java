@@ -12,9 +12,9 @@ public class SliderController {
     public static PIDController sliderPID = new PIDController(0, 0, 0); // Tune this for cm values
 
 //THESE VALUES ARE IN CM
-    public static final double highbasket = 109.2;
-    public static final double lowbasket = 65.4;
-    public static final double ground = 0;
+    public static final double HIGH_BASKET = 109.2;
+    public static final double LOW_BASKET = 65.4;
+    public static final double GROUND = 0;
 
     public static double PIDError =0;
 

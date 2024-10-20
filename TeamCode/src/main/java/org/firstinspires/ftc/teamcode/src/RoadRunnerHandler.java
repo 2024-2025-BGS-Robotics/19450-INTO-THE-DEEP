@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode.src;
 
 
 import com.acmerobotics.roadrunner.geometry.Pose2d;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
@@ -26,10 +25,10 @@ public class  RoadRunnerHandler {
         TrajectorySequence BlueRightSide = drive.trajectorySequenceBuilder(new Pose2d(12, 63, Math.toRadians(270)))
                 .lineToLinearHeading(new Pose2d(0, 33, Math.toRadians(270)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //DROP SPECIMEN
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
@@ -42,10 +41,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(56, 57, Math.toRadians(-320)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //drop sample
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
                 .lineToLinearHeading(new Pose2d(58, 37, Math.toRadians(270)))
@@ -56,10 +55,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(56, 57, Math.toRadians(-320)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //drop sample
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
@@ -70,10 +69,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(56, 57, Math.toRadians(-320)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //drop sample
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
                 .build();
@@ -116,10 +115,10 @@ public class  RoadRunnerHandler {
         TrajectorySequence RedLeftSide = drive.trajectorySequenceBuilder(new Pose2d(-12, -63, Math.toRadians(-270)))
                 .lineToLinearHeading(new Pose2d(0, -33, Math.toRadians(-270)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //DROP SPECIMEN
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
@@ -133,10 +132,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(-56, -57, Math.toRadians(228)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //DROP SPECIMEN
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
@@ -147,10 +146,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(-56, -57, Math.toRadians(228)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //DROP SPECIMEN
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
@@ -161,10 +160,10 @@ public class  RoadRunnerHandler {
 
                 .lineToLinearHeading(new Pose2d(-56, -57, Math.toRadians(228)))
                 .addDisplacementMarker(() -> {
-                    SliderController.settarget(SliderController.highbasket);
+                    SliderController.settarget(SliderController.HIGH_BASKET);
                     SliderController.updateslide();
                     //DROP SPECIMEN
-                    SliderController.settarget(SliderController.ground);
+                    SliderController.settarget(SliderController.GROUND);
                     SliderController.updateslide();
                 })
 
