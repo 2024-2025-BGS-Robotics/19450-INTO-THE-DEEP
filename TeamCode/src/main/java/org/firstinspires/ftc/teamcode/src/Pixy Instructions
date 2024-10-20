@@ -1,0 +1,32 @@
+
+Most likely, Pixy will come with a ribbon cable that will connect directly to the Pixy.
+If you do not have one, you will need to order a ten pin ribbon cable to connect Pixy.
+
+In order to wire it, we have to connect a total of four wires from Pixy to the REV Module.
+ The I2C SDL, SDA, and ground should all be connected to an I2C port on the REV Module.
+  The 5v wire is slightly more complicated.
+  What we did was use an old servo wire connected to the 5v terminal on the REV Module, and the pin in the middle, which was a red wire for us, we connected to the 5v wire on our ribbon cable.
+
+If you use this method, you will have many unused wires.
+I reccomend taping them down so that they do not interfere with the total of four connections that you should have between the ribbon cable and the wires coming out of the Expansion Hub.
+
+Section Two: Setup
+
+In order to set up Pixy, you are going to need to download PixyMon, if you want to save yourself some headache(which you do).
+
+You can download PixyMon here: http://cmucam.org/projects/cmucam5/wiki/Latest_release
+
+Then you'll want to disconnect all wires from Pixy, and connect Pixy via USB to your computer running PixyMon.
+ Once PixyMon is running, you'll be able to see what Pixy sees.
+ You'll want to physically adjust the lens, and tighten it so that it doesn't lose focus.
+ Then, in PixyMon, go to File -> Configure, and browse to the Interface tab.
+ There, set Pixy to I2C mode, and ensure that the address is 0x54, or some other address, if you want, but this guide will refer to Pixy as 0x54.
+ Then, confirm that the UART Baudrate is set to 19200.
+
+Then, you'll want to teach Pixy an object.
+ You can start with anything, but keep in mind that Pixy can track seven unique color signatures, and all of your signatures should be fairly different so that Pixy can distinguish between them.
+ To teach Pixy an object through PixyMon, click Action -> Set Signature 1(or whatever signature.)
+  You can fill in all the signatures if you'd like, or just leave it at one.
+   Then, you'll usually have to tune Pixy.
+   Go to File -> Configure again, and adjust the sliders for the signatures until Pixy can detect each object clearly.
+   Then, you may exit out of PixyMon.
