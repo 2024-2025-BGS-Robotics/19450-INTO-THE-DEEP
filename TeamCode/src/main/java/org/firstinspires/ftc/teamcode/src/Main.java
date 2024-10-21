@@ -16,6 +16,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.lib.LEDController;
 import org.firstinspires.ftc.teamcode.lib.MotorController;
+import org.firstinspires.ftc.teamcode.lib.PixyController;
 import org.firstinspires.ftc.teamcode.lib.RumbleController;
 import org.firstinspires.ftc.teamcode.lib.ServoController;
 import org.firstinspires.ftc.teamcode.lib.SliderController;
@@ -37,6 +38,11 @@ public class Main extends LinearOpMode {
         telemetry.update();
 
         LEDController.initlights(hardwareMap.get(RevBlinkinLedDriver.class, "blinkin"));
+
+        PixyController pixyController = new PixyController();
+
+        pixyController.initpixy(hardwareMap.i2cDeviceSynch.get("pixy"));
+        pixyController.runpixy();
 
         MotorController.initmotors(
                 hardwareMap.get(DcMotor.class,"LeftBackDrive"),
@@ -78,6 +84,8 @@ public class Main extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
+
+
             MotorController.runmotor(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x, gamepad1.right_bumper);
 //            SliderController.runslider(gamepad1.left_trigger, gamepad1.right_trigger);
 
@@ -132,6 +140,21 @@ public class Main extends LinearOpMode {
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addLine("SliderPID Error:" + SliderController.PIDError);
+
+            telemetry.addData("Byte 0", PixyController.pixydata[0]);
+            telemetry.addData("Byte 1", PixyController.pixydata[1]);
+            telemetry.addData("Byte 2", PixyController.pixydata[2]);
+            telemetry.addData("Byte 3", PixyController.pixydata[3]);
+            telemetry.addData("Byte 4", PixyController.pixydata[4]);
+            telemetry.addData("Byte 5", PixyController.pixydata[5]);
+            telemetry.addData("Byte 6", PixyController.pixydata[6]);
+            telemetry.addData("Byte 7", PixyController.pixydata[7]);
+            telemetry.addData("Byte 8", PixyController.pixydata[8]);
+            telemetry.addData("Byte 9", PixyController.pixydata[9]);
+            telemetry.addData("Byte 10", PixyController.pixydata[10]);
+            telemetry.addData("Byte 11", PixyController.pixydata[11]);
+            telemetry.addData("Byte 12", PixyController.pixydata[12]);
+            telemetry.addData("Byte 13", PixyController.pixydata[13]);
 
             telemetry.update();
 

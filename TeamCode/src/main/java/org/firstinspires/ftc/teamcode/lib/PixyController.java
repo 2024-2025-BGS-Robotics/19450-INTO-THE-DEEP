@@ -17,20 +17,23 @@ Bytes    16-bit word    Description
         12, 13   y              height of object
         */
 
-public class PixyController extends LinearOpMode {
+public class PixyController {
     I2cDeviceSynch pixy;
+
+    public static byte[] pixydata;
+
     //our Pixy device
-    @Override
-    public void runOpMode() throws InterruptedException {
+
+    public void initpixy (I2cDeviceSynch Pixy) {
         //setting up Pixy to the hardware map
-        pixy = hardwareMap.i2cDeviceSynch.get("pixy");
+        pixy = Pixy;
 
         //setting Pixy's I2C Address
         pixy.setI2cAddress(I2cAddr.create7bit(0x54));
 
         //setting Pixy's read window. You'll want these exact parameters, and you can reference the
-       // SDK Documentation to learn more
-        I2cDeviceSynch.ReadWindow readWindow = new I2cDeviceSynch.ReadWindow (1, 26,
+        // SDK Documentation to learn more
+        I2cDeviceSynch.ReadWindow readWindow = new I2cDeviceSynch.ReadWindow(1, 26,
                 I2cDeviceSynch.ReadMode.REPEAT);
         pixy.setReadWindow(readWindow);
 
@@ -58,4 +61,24 @@ public class PixyController extends LinearOpMode {
             telemetry.update();
         }
     }
+
+
+        public void runpixy (){
+        pixydata[0] = pixy.read8(0);
+        pixydata[1] = pixy.read8(1);
+        pixydata[2] = pixy.read8(2);
+        pixydata[3] = pixy.read8(3);
+        pixydata[4] = pixy.read8(4);
+        pixydata[5] = pixy.read8(5);
+        pixydata[6] = pixy.read8(6);
+        pixydata[7] = pixy.read8(7);
+        pixydata[8] = pixy.read8(8);
+        pixydata[9] = pixy.read8(9);
+        pixydata[10] = pixy.read8(10);
+        pixydata[11] = pixy.read8(11);
+        pixydata[12] = pixy.read8(12);
+        pixydata[13] = pixy.read8(13);
+
+        }
+
 }
