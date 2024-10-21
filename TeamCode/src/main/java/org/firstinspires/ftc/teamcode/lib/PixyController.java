@@ -40,26 +40,6 @@ public class PixyController {
         //required to "turn on" the device
         pixy.engage();
 
-        waitForStart();
-
-        while(opModeIsActive()) {
-            //send every byte of data that we can to the phone screen
-            telemetry.addData("Byte 0", pixy.read8(0));
-            telemetry.addData("Byte 1", pixy.read8(1));
-            telemetry.addData("Byte 2", pixy.read8(2));
-            telemetry.addData("Byte 3", pixy.read8(3));
-            telemetry.addData("Byte 4", pixy.read8(4));
-            telemetry.addData("Byte 5", pixy.read8(5));
-            telemetry.addData("Byte 6", pixy.read8(6));
-            telemetry.addData("Byte 7", pixy.read8(7));
-            telemetry.addData("Byte 8", pixy.read8(8));
-            telemetry.addData("Byte 9", pixy.read8(9));
-            telemetry.addData("Byte 10", pixy.read8(10));
-            telemetry.addData("Byte 11", pixy.read8(11));
-            telemetry.addData("Byte 12", pixy.read8(12));
-            telemetry.addData("Byte 13", pixy.read8(13));
-            telemetry.update();
-        }
     }
 
 
