@@ -41,7 +41,7 @@ public class MaxVelocityTest extends LinearOpMode{
                 }
 
                 telemetry.addData("current velocity", currentVelocity);
-                telemetry.addData("maximum velocity", maxVelocity);
+                telemetry.addData("maximum reached velocity", maxVelocity);
                 telemetry.update();
             }
         }

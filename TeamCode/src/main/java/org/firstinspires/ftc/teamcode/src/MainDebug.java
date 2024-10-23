@@ -1,18 +1,17 @@
 package org.firstinspires.ftc.teamcode.src;
 
 
-import android.media.tv.TvInputService;
+import static org.firstinspires.ftc.teamcode.lib.PixyController.sign1;
+import static org.firstinspires.ftc.teamcode.lib.PixyController.sign2;
 
 import com.qualcomm.hardware.rev.RevBlinkinLedDriver;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
-
 import com.qualcomm.robotcore.hardware.HardwareDevice;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-
 
 import org.firstinspires.ftc.teamcode.lib.LEDController;
 import org.firstinspires.ftc.teamcode.lib.MotorController;
@@ -24,8 +23,8 @@ import org.firstinspires.ftc.teamcode.lib.SliderController;
 import java.util.HashMap;
 import java.util.Objects;
 
-@TeleOp (name="LDB Main", group="LinearOpmode")
-public class Main extends LinearOpMode {
+@TeleOp (name="LDB Main Debug", group="LinearOpmode")
+public class MainDebug extends LinearOpMode {
 
     public ElapsedTime runtime = new ElapsedTime();
     private static String trajectoryname;
@@ -141,23 +140,12 @@ public class Main extends LinearOpMode {
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addLine("SliderPID Error:" + SliderController.PIDError);
 
-            telemetry.addData("Byte 0", PixyController.pixydata[0]);
-            telemetry.addData("Byte 1", PixyController.pixydata[1]);
-            telemetry.addData("Byte 2", PixyController.pixydata[2]);
-            telemetry.addData("Byte 3", PixyController.pixydata[3]);
-            telemetry.addData("Byte 4", PixyController.pixydata[4]);
-            telemetry.addData("Byte 5", PixyController.pixydata[5]);
-            telemetry.addData("Byte 6", PixyController.pixydata[6]);
-            telemetry.addData("Byte 7", PixyController.pixydata[7]);
-            telemetry.addData("Byte 8", PixyController.pixydata[8]);
-            telemetry.addData("Byte 9", PixyController.pixydata[9]);
-            telemetry.addData("Byte 10", PixyController.pixydata[10]);
-            telemetry.addData("Byte 11", PixyController.pixydata[11]);
-            telemetry.addData("Byte 12", PixyController.pixydata[12]);
-            telemetry.addData("Byte 13", PixyController.pixydata[13]);
 
+
+
+            telemetry.addData("X value of sign1", 0xff&sign1[1]);
+            telemetry.addData("X value of sign2", 0xff&sign2[1]);
             telemetry.update();
-
 
 
 

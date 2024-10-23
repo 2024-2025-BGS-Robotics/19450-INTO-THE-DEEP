@@ -1,5 +1,4 @@
 package org.firstinspires.ftc.teamcode.lib;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch;
 
@@ -16,11 +15,13 @@ Bytes    16-bit word    Description
         10, 11   y              width of object
         12, 13   y              height of object
         */
-
 public class PixyController {
-    I2cDeviceSynch pixy;
+    public static I2cDeviceSynch pixy;
 
-    public static byte[] pixydata;
+    public static byte[] sign1;
+    public static byte[] sign2;
+
+
 
     //our Pixy device
 
@@ -41,23 +42,9 @@ public class PixyController {
         pixy.engage();
 
     }
-
-
         public void runpixy (){
-        pixydata[0] = pixy.read8(0);
-        pixydata[1] = pixy.read8(1);
-        pixydata[2] = pixy.read8(2);
-        pixydata[3] = pixy.read8(3);
-        pixydata[4] = pixy.read8(4);
-        pixydata[5] = pixy.read8(5);
-        pixydata[6] = pixy.read8(6);
-        pixydata[7] = pixy.read8(7);
-        pixydata[8] = pixy.read8(8);
-        pixydata[9] = pixy.read8(9);
-        pixydata[10] = pixy.read8(10);
-        pixydata[11] = pixy.read8(11);
-        pixydata[12] = pixy.read8(12);
-        pixydata[13] = pixy.read8(13);
+            sign1 = pixy.read(0x51,5);
+            sign2 = pixy.read(0x52,5);
 
         }
 
